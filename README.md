@@ -1,6 +1,11 @@
 ### EX4 Implementation of Cluster and Visitor Segmentation for Navigation patterns
-### DATE: 19/09/2025
-### AIM: To implement Cluster and Visitor Segmentation for Navigation patterns in Python.
+##### DATE: 19-09-2025
+##### REGISTER NUMBER : 212223230146
+##### NAME : Pavithra D
+
+### AIM:
+To implement Cluster and Visitor Segmentation for Navigation patterns in Python.
+
 ### Description:
 <div align= "justify">Cluster visitor segmentation refers to the process of grouping or categorizing visitors to a website, 
   application, or physical location into distinct clusters or segments based on various characteristics or behaviors they exhibit. 
@@ -14,20 +19,22 @@
 4) Visualize the result using matplotlib.
 
 ### Program 1:
-```python
+```
+
+
 import pandas as pd
 
-df=pd.read_csv("C:\\Users\\Preethi\\Downloads\\clustervisitor.csv")
+df=pd.read_csv(r"C:\Users\admin\Downloads\clustervisitor.csv")
 df
 
-cluster={"Young":(df['Age']<=30),"Middle":((df['Age']>30) & (df['Age']<=50)),"Old":(df['Age']>50)}
+cluster={"Young":(df['Age']<=30),"Middle":(df['Age']>30 & (df['Age']<=50)),"Old":(df['Age']>50)}
 print(cluster)
 
 count=[]
 for g,c in cluster.items():
     visitors=df[c]
     count.append(len(visitors))
-    print(f"visitors in {g} Group")
+    print(f"Visistors in {g} Group")
     print(visitors)
     print(count)
 
@@ -38,17 +45,31 @@ plt.xlabel('Age Groups')
 plt.ylabel('Number of Visitors')
 plt.title('Visitor Distribution Across Age Groups')
 plt.show()
+
 ```
 ### Output:
 
-<img width="700" height="545" alt="image" src="https://github.com/user-attachments/assets/86412258-26ba-4989-a3ff-5ec3974e7493" />
 
-### Program 2:
-```python
-df=pd.read_csv("C:\\Users\\Preethi\\Downloads\\clustervisitor (Salary).csv")
-df1=df['Age']
-df2=df['Salary']
-df3=pd.concat([df1,df2],axis=1)
+<img width="976" height="729" alt="image" src="https://github.com/user-attachments/assets/8062c93a-6021-489d-8408-2f809db69b13" />
+
+<img width="776" height="764" alt="image" src="https://github.com/user-attachments/assets/7e7ee41c-ba4a-4f53-865d-538b6b1633dc" />
+
+<img width="752" height="732" alt="image" src="https://github.com/user-attachments/assets/e304aad2-4758-4ad8-a86b-42c7084f9cca" />
+
+<img width="956" height="701" alt="image" src="https://github.com/user-attachments/assets/5828518c-5c0f-4ef6-a89b-e88a59f79b2b" />
+
+
+### Program2:
+
+```
+
+import pandas as pd
+df=pd.read_csv(r"C:\Users\admin\Downloads\clustervisitor (Salary).csv")
+df
+
+df1 = df['Age']
+df2 = df['Salary']
+df3 = pd.concat([df1, df2],axis=1)   
 df3
 
 from sklearn.preprocessing import StandardScaler
@@ -64,12 +85,22 @@ df3
 
 plt.scatter(df3['Age'],df3['Salary'],c=df3['cluster'])
 plt.xlabel("Age")
-plt.ylabel("Salary in thousands")
+plt.ylabel("Salary in Thousands")
 plt.show()
+
 ```
 ### Output:
 
-<img width="589" height="432" alt="image" src="https://github.com/user-attachments/assets/d0cf235a-1f17-4565-a1e7-f7d153b81306" />
+
+<img width="720" height="664" alt="image" src="https://github.com/user-attachments/assets/bbaae282-880b-410b-8ac3-2f04a781878d" />
+
+
+<img width="862" height="766" alt="image" src="https://github.com/user-attachments/assets/a01d31fc-175d-4997-b36f-b6d4a731c484" />
+
+
+
+<img width="914" height="552" alt="image" src="https://github.com/user-attachments/assets/0c0b50dc-cc54-4ab5-bcc3-ec9a1a1e70c1" />
+
 
 ### Result:
-Successfuly completed.
+Cluster and Visitor Segmentation for Navigation patterns in Python is implemented successfully.
